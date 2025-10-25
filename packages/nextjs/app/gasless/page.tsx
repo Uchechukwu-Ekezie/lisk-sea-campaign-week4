@@ -1,15 +1,32 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 import { liskSepoliaThirdweb } from "~~/chains";
 import { SmartWalletDemo } from "~~/components/example-ui/SmartWalletDemo";
 import { thirdwebClient } from "~~/services/web3/thirdwebConfig";
 
+// Force dynamic rendering to avoid SSG errors with thirdweb hooks
 export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+export const revalidate = 0;
 
 const Gasless: NextPage = () => {
+  const [mounted, setMounted] = useState(false);
   const account = useActiveAccount();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-base-300 to-base-100 flex items-center justify-center">
+        <div className="loading loading-spinner loading-lg"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-base-300 to-base-100">
