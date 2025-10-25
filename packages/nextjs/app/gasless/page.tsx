@@ -6,6 +6,8 @@ import { liskSepoliaThirdweb } from "~~/chains";
 import { SmartWalletDemo } from "~~/components/example-ui/SmartWalletDemo";
 import { thirdwebClient } from "~~/services/web3/thirdwebConfig";
 
+export const dynamic = "force-dynamic";
+
 const Gasless: NextPage = () => {
   const account = useActiveAccount();
 
