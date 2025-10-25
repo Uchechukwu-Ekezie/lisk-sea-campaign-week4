@@ -5,6 +5,15 @@
   "engines": {
     "node": "22.x"
   },
+  "resolutions": {
+    "bigint-buffer": "npm:@solana/buffer-layout-utils@^0.2.0",
+    "bufferutil": "^4.0.8",
+    "utf-8-validate": "^6.0.3"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8",
+    "utf-8-validate": "^6.0.3"
+  },
   "scripts": {
     "dev": "next dev",
     "start": "next dev",
