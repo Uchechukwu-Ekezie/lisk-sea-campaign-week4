@@ -8,6 +8,8 @@ import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
 export const TokenBalance = () => {
   const { address: connectedAddress, isConnected, isConnecting } = useAccount();
 
+  const balanceArgs = ([connectedAddress as `0x${string}` | undefined] as const);
+
   const {
     data: tokenBalance,
     isLoading: isLoadingBalance,
@@ -15,7 +17,7 @@ export const TokenBalance = () => {
   } = useScaffoldContractRead({
     contractName: "MyToken",
     functionName: "balanceOf",
-    args: [connectedAddress],
+    args: balanceArgs,
     enabled: !!connectedAddress, // Only fetch when address is available
   });
 

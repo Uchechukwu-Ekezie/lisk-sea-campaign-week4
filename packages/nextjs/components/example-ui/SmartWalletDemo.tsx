@@ -238,12 +238,7 @@ export const SmartWalletDemo = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4v16m8-8H4"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                 </svg>
                 Mint NFT (Gas Free!)
               </>
@@ -294,7 +289,9 @@ export const SmartWalletDemo = () => {
             </svg>
             <div>
               <div className="font-bold">Fully Sponsored Transaction</div>
-              <div className="text-xs">All gas fees are covered by thirdweb's paymaster. You pay absolutely nothing!</div>
+              <div className="text-xs">
+                All gas fees are covered by thirdweb&apos;s paymaster. You pay absolutely nothing!
+              </div>
             </div>
           </div>
         </div>
@@ -310,7 +307,7 @@ export const SmartWalletDemo = () => {
             <ul className="space-y-2 text-sm text-base-content/80">
               <li className="flex items-start gap-2">
                 <span className="text-success font-bold">1.</span>
-                <span>Click "Mint NFT" to initiate gasless transaction</span>
+                <span>Click &quot;Mint NFT&quot; to initiate gasless transaction</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-success font-bold">2.</span>

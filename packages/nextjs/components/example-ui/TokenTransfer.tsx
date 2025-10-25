@@ -11,11 +11,13 @@ export const TokenTransfer = () => {
   const [recipient, setRecipient] = useState("");
   const [amount, setAmount] = useState("");
 
+  const balanceArgs = ([connectedAddress as `0x${string}` | undefined] as const);
+
   // Get user's token balance
   const { data: tokenBalance } = useScaffoldContractRead({
     contractName: "MyToken",
     functionName: "balanceOf",
-    args: [connectedAddress],
+    args: balanceArgs,
     enabled: !!connectedAddress,
   });
 
@@ -52,7 +54,7 @@ export const TokenTransfer = () => {
 
     try {
       await writeMyTokenAsync({
-        args: [recipient, parseEther(amount)],
+        args: [recipient as `0x${string}`, parseEther(amount)],
       });
 
       notification.success("Token transfer successful!");

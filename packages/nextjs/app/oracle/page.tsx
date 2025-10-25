@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { PriceDisplay } from "~~/components/example-ui/PriceDisplay";
-
 
 const Oracle: NextPage = () => {
   const { isConnected } = useAccount();
@@ -23,12 +21,7 @@ const Oracle: NextPage = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
             </div>
@@ -72,12 +65,7 @@ const Oracle: NextPage = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               Live Oracle Data
             </div>

@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 import { liskSepoliaThirdweb } from "~~/chains";
 import { SmartWalletDemo } from "~~/components/example-ui/SmartWalletDemo";
-
 import { thirdwebClient } from "~~/services/web3/thirdwebConfig";
 
 const Gasless: NextPage = () => {
@@ -24,12 +23,7 @@ const Gasless: NextPage = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               ERC-4337 Powered
             </div>
@@ -93,8 +87,10 @@ const Gasless: NextPage = () => {
                     ></path>
                   </svg>
                   <div className="text-sm">
-                    <div className="font-semibold mb-1">What's a Smart Wallet?</div>
-                    <div className="text-xs">A programmable on-chain account that enables gasless transactions and advanced features</div>
+                    <div className="font-semibold mb-1">What&apos;s a Smart Wallet?</div>
+                    <div className="text-xs">
+                      A programmable on-chain account that enables gasless transactions and advanced features
+                    </div>
                   </div>
                 </div>
               )}
@@ -209,4 +205,3 @@ const Gasless: NextPage = () => {
 };
 
 export default Gasless;
-

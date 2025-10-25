@@ -13,8 +13,7 @@ export const DiagnosticInfo = () => {
   } = useScaffoldContractRead({
     contractName: "MyToken",
     functionName: "balanceOf",
-    args: [connectedAddress],
-    enabled: !!connectedAddress,
+    args: [connectedAddress as `0x${string}` | undefined],
   });
 
   return (

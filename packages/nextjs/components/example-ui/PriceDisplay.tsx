@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface PriceDisplayProps {
   symbol: "ETH" | "BTC";
@@ -18,16 +18,14 @@ export const PriceDisplay = ({ symbol }: PriceDisplayProps) => {
       setError("");
 
       // Fetch price directly from RedStone HTTP API
-      const response = await fetch(
-        `https://api.redstone.finance/prices/?symbol=${symbol}&provider=redstone&limit=1`
-      );
-      
+      const response = await fetch(`https://api.redstone.finance/prices/?symbol=${symbol}&provider=redstone&limit=1`);
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      
+
       if (!data || !data[0] || !data[0].value) {
         throw new Error("No price data returned from oracle");
       }
@@ -156,13 +154,21 @@ export const PriceDisplay = ({ symbol }: PriceDisplayProps) => {
               <div className="bg-base-200 rounded-xl p-3 text-center">
                 <p className="text-xs text-base-content/60 mb-1">24h High</p>
                 <p className="font-semibold text-success">
-                  ${(parseFloat(price) * 1.05).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  $
+                  {(parseFloat(price) * 1.05).toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </p>
               </div>
               <div className="bg-base-200 rounded-xl p-3 text-center">
                 <p className="text-xs text-base-content/60 mb-1">24h Low</p>
                 <p className="font-semibold text-error">
-                  ${(parseFloat(price) * 0.95).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  $
+                  {(parseFloat(price) * 0.95).toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </p>
               </div>
             </div>
@@ -188,11 +194,7 @@ export const PriceDisplay = ({ symbol }: PriceDisplayProps) => {
             </svg>
             <span>Verified by RedStone</span>
           </div>
-          <button
-            className="btn btn-primary btn-sm gap-2"
-            onClick={fetchPrice}
-            disabled={isLoading}
-          >
+          <button className="btn btn-primary btn-sm gap-2" onClick={fetchPrice} disabled={isLoading}>
             {isLoading ? (
               <>
                 <span className="loading loading-spinner loading-xs"></span>
